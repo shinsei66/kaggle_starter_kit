@@ -52,11 +52,7 @@ c.NotebookApp.port = 8888
 [Esc] + : + wq + [Enter]
 
 ```
-## Install tmux
-```
-$ sudo apt install git emacs build-essential tmux
-$ sudo apt update
-```
+
 
 ## Install CUDA Toolkit
 
@@ -192,6 +188,12 @@ $ chmod -R 777 train.csv
 $ chmod -R 777 *.csv
 $ chmod -R 777 *
 $ tar -xvf '*.tar'
+```
+
+## Install tmux
+```
+$ sudo apt install git emacs build-essential tmux
+$ sudo apt update
 ```
 
 ## Useful tmux commands
