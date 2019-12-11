@@ -1,11 +1,5 @@
 # kaggle_starter
 
-## tmux comand
-
-```
-$ tmux new-session -s <session-name>
-```
-
 ## Anaconda Install 
 
 [参考URL](https://www.virment.com/setup-anaconda-python-jupyter-ubuntu/)
@@ -143,16 +137,18 @@ $ ssh -T git@github.com
 ```
 
 
-## Push Existing Repository to the remote
+## Copying remote repository to existing directory and push as a new repository to the remote
 [参考URL](https://qiita.com/takamicii/items/b0d1cc92fd172468fbf3)
 ```
-git clone git@github.com:shinsei66/[REMOTE REPOSITORY].git
-cd [REMOTE REPOSITORY]
-git remote add [EXISTING DIRECTORY] git@github.com:shinsei66/XXXX.git
-git pull [EXISTING DIRECTORY] master
+
+# Create a new empty repository named [NEW EMPTY REPOSITORY] for your new project in advance.
+git clone git@github.com:shinsei66/[NEW EMPTY REPOSITORY].git # A new directory is made in your local.
+cd [NEW EMPTY REPOSITORY]
+git remote add [EXISTING REPOSITORY] git@github.com:shinsei66/[EXISTING REPOSITORY].git
+git pull [EXISTING REPOSITORY] master # The contents of the existing directory you want is copied to the directory.
 git add -A
 git commit -m "first commit"
-git remote rm [EXISTING DIRECTORY]
+git remote rm [EXISTING REPOSITORY]
 git push -u origin master
 ```
 
@@ -197,6 +193,17 @@ $ chmod -R 777 *.csv
 $ chmod -R 777 *
 $ tar -xvf '*.tar'
 ```
+
+## Useful tmux commands
+
+```
+# ネットワーク経由でサーバーを使用するときに、ネットワークが切れることによるセッション終了を防ぐためにtmuxを用いる
+# これによりネットワークが切れてもtmuxの踏み台サーバーがあることで、セッションは継続される
+$ tmux new-session -s <session-name>
+$ tmux ls
+$ tmux a -t <session-name>
+```
+
 ### Connect GCP from local
 
 ```
