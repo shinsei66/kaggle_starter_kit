@@ -104,15 +104,14 @@ $ pip install keras
 $ pip install jupyter notebook
 ```
 
-
-## Install Github
+## Useful Github commands
+### Install Github
 ```
 $ sudo apt-get install git
 
 ```
 
-
-## [GitHub](https://github.com/shinsei66) Connection
+### [GitHub](https://github.com/shinsei66) Connection
 [参考URL](https://qiita.com/shizuma/items/2b2f873a0034839e47ce)
 ```
 $ cd ~/.ssh
@@ -133,7 +132,7 @@ $ ssh -T git@github.com
 ```
 
 
-## Copying remote repository to existing directory and push as a new repository to the remote
+### Copying remote repository to existing directory and push as a new repository to the remote
 [参考URL](https://qiita.com/takamicii/items/b0d1cc92fd172468fbf3)
 ```
 
@@ -147,6 +146,14 @@ git commit -m "first commit"
 git remote rm [EXISTING REPOSITORY]
 git push -u origin master
 ```
+
+### Other Github Commands
+
+```
+$ git rm -r [すでにaddしているもので管理対象から外したいフォルダ]
+$ git revert HEAD #直前のコミットを取り消し
+```
+
 
 ## Pytorch Installation
 [参考URL](https://pytorch.org/get-started/locally/)
@@ -172,11 +179,44 @@ $ ##kaggle data download API###
 $ kaggle datasets download XXX/XXX
 ```
 
-## Change Time zone
+## Useful commands
+
+### tmux conmands
+```
+# Install tmux
+$ sudo apt install git emacs build-essential tmux
+$ sudo apt update
+# ネットワーク経由でサーバーを使用するときに、ネットワークが切れることによるセッション終了を防ぐためにtmuxを用いる
+# これによりネットワークが切れてもtmuxの踏み台サーバーがあることで、セッションは継続される
+$ tmux new-session -s <session-name>
+$ tmux ls
+$ tmux a -t <session-name>
+```
+
+### Connect GCP from local
+
+``` 
+$ ssh-keygen -t rsa -b 4096 -C "XXXX@XXXX.com"
+$ cat ~/.ssh/id_rsa.pub
+```
+
+### Check memory status
+
+```
+$ free -g                          #GB単位で空きメモリ容量を確認
+$ df                               #各アカウントのディスク占有を確認
+$ du -sh ./* | sort -rn | head -5  #現在のディレクトリ内の各フォルダのディスク占有Top5を確認
+```
+
+### File transfer
+
+```
+$ scp -r [アカウント]@[IP]:[ダウンロード元ディレクトリ] [ダウンロード先ディレクトリ]
+```
+### Change Time zone
 ```
 $ sudo timedatectl set-timezone Asia/Tokyo
 ```
-
 ## Unzip files and change authority
 
 ```
@@ -188,27 +228,4 @@ $ chmod -R 777 train.csv
 $ chmod -R 777 *.csv
 $ chmod -R 777 *
 $ tar -xvf '*.tar'
-```
-
-## Install tmux
-```
-$ sudo apt install git emacs build-essential tmux
-$ sudo apt update
-```
-
-## Useful tmux commands
-
-```
-# ネットワーク経由でサーバーを使用するときに、ネットワークが切れることによるセッション終了を防ぐためにtmuxを用いる
-# これによりネットワークが切れてもtmuxの踏み台サーバーがあることで、セッションは継続される
-$ tmux new-session -s <session-name>
-$ tmux ls
-$ tmux a -t <session-name>
-```
-
-### Connect GCP from local
-
-```
-$ ssh-keygen -t rsa -b 4096 -C "XXXX@XXXX.com"
-$ cat ~/.ssh/id_rsa.pub
 ```
