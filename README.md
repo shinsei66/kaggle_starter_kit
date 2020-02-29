@@ -51,6 +51,12 @@ c.NotebookApp.port = 8888
 
 [Esc] + : + wq + [Enter]
 
+# notebook extensionsを使用する
+pip install jupyter-contrib-nbextensions
+pip install jupyter-nbextensions-configurator
+jupyter contrib nbextension install --user
+jupyter nbextensions_configurator enable --user
+
 ```
 
 
