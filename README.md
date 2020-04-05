@@ -151,6 +151,12 @@ git add -A
 git commit -m "first commit"
 git remote rm [EXISTING REPOSITORY]
 git push -u origin master
+
+
+# 上記の流れをシェルスクリプトにまとめたので、以下をコマンド上で実施すればOK
+sh git_newrepo_clone.sh GITHUB_USERNAME NEW_REPOSITORY_NAME
+# GITHUB_USERNAMEはgithubのユーザー名、NEW_REPOSITORY_NAMEは新規で作りたいkaggle用のレポジトリ名で、この二つを引数として渡す
+
 ```
 
 ### Other Github Commands
