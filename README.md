@@ -143,19 +143,20 @@ $ ssh -T git@github.com
 ```
 
 # Create a new empty repository named [NEW EMPTY REPOSITORY] for your new project in advance.
-git clone git@github.com:shinsei66/[NEW EMPTY REPOSITORY].git # A new directory is made in your local.
+git clone git@github.com:shinsei66/[NEW EMPTY REPOSITORY].git 
+# A new directory is made in your local.
 cd [NEW EMPTY REPOSITORY]
 git remote add [EXISTING REPOSITORY] git@github.com:shinsei66/[EXISTING REPOSITORY].git
 git pull [EXISTING REPOSITORY] master # The contents of the existing directory you want is copied to the directory.
 git add -A
-git commit -m "first commit"
 git remote rm [EXISTING REPOSITORY]
 git push -u origin master
 
 
 # 上記の流れをシェルスクリプトにまとめたので、以下をコマンド上で実施すればOK
 sh git_newrepo_clone.sh GITHUB_USERNAME NEW_REPOSITORY_NAME
-# GITHUB_USERNAMEはgithubのユーザー名、NEW_REPOSITORY_NAMEは新規で作りたいkaggle用のレポジトリ名で、この二つを引数として渡す
+# GITHUB_USERNAMEはgithubのユーザー名、NEW_REPOSITORY_NAMEは新規で作りたいkaggle用のレポジトリ名で、
+# この二つを引数として渡す
 
 ```
 
